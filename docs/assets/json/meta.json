@@ -1,38 +1,38 @@
 [
   {
-    "toggle_switch_01" : {
+    "toggle_switch_1" : {
       "meta" : "<meta charset='UTF-8'>",
       "description" : "文字コードの指定"
     },
-    "toggle_switch_02" : {
+    "toggle_switch_2" : {
       "meta" : "<meta name='robots' content='noindex,nofollow,noarchive'>",
       "description" : "検索ロボットに対する検索拒否 index＝表示している語句 follow＝リンク先の情報 archive＝グーグル検索アーカイブにデータを保存"
     },
-    "toggle_switch_03" : {
+    "toggle_switch_3" : {
       "meta" : "<meta http-equiv='X-UA-Compatible' content='IE=edge'>",
       "description" : "ユーザーエージェントの指定"
     },
-    "toggle_switch_04" : {
+    "toggle_switch_4" : {
       "meta" : "<meta http-equiv='cleartype' content='on'>",
       "description" : "クリアタイプ　フォントの縁の描画修正"
     },
-    "toggle_switch_05" : {
+    "toggle_switch_5" : {
       "meta" : "<meta name='format-detection' content='telephone=no,address=no,email=no'>",
       "description" : "電話番号やメールアドレスをリンクにさせる"
     },
-    "toggle_switch_06" : {
+    "toggle_switch_6" : {
       "meta" : "<meta name='viewport' content='width=device-width'>",
       "description" : "ビューポートの指定 レスポンシブサイトを制作する場合はこれを書く"
     },
-    "toggle_switch_07" : {
+    "toggle_switch_7" : {
       "meta" : "<meta name='coverage' content='worldwide,asia,japan'>",
       "description" : "提供範囲の指定"
     },
-    "toggle_switch_08" : {
+    "toggle_switch_8" : {
       "meta" : "<meta name='date' content='2015-01-01T00:00:00+09:00'>",
       "description" : "作成・更新日時の指定"
     },
-    "toggle_switch_09" : {
+    "toggle_switch_9" : {
       "meta" : "<meta name='author' content='著作権情報'>",
       "description" : "著作権情報の指定"
     },

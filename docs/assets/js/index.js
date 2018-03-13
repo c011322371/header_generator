@@ -12,8 +12,14 @@ var HEAD_GENERATOR = {
   },
   init : function(data){
     this.jsonData = data[0];
+    this.sendJsonData();
     this.setParameters();
     this.bindEvent();
+  },
+  sendJsonData: function() {
+    // create meta list dom
+    var jsonSize = Object.keys(this.jsonData).length;
+    CLONE_META_LIST.init(jsonSize);
   },
   setParameters: function() {
     this.$preview = $('.jsc-preview');
@@ -70,6 +76,33 @@ var HEAD_GENERATOR = {
       }
     });
     this.$preview.val(metaInfo.join('\n'));
+  }
+};
+
+var CLONE_META_LIST = {
+  init: function(jsonSize) {
+    this.jsonSize = jsonSize;
+    this.setParameters();
+    this.bindEvent();
+  },
+  setParameters: function() {
+    this.$metaListWrapper = $('.jsc-meta-list');
+    this.$metaListTemplate = this.$metaListWrapper.children('li').detach();
+  },
+  bindEvent: function() {
+    this.createMetaList();
+  },
+  createMetaList: function() {
+    var metaFragment = document.createDocumentFragment();
+    for(var i=0; i<this.jsonSize; i++) {
+      var $metaClone = this.$metaListTemplate.clone(),
+          $toggle_input = $metaClone.find('.jsc-toggle_switch'),
+          $toggle_label = $metaClone.find('.jsc-toggle_label');
+      $toggle_input.attr("id", "toggle_switch_" + (i+1));
+      $toggle_label.attr("for", "toggle_switch_" + (i+1));
+      metaFragment.appendChild($metaClone.get(0));
+    }
+    this.$metaListWrapper.get(0).appendChild(metaFragment);
   }
 };
 
