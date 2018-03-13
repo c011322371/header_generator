@@ -1,0 +1,60 @@
+[
+  {
+    "toggle_switch_01" : {
+      "meta" : "<meta charset='UTF-8'>",
+      "description" : "文字コードの指定"
+    },
+    "toggle_switch_02" : {
+      "meta" : "<meta name='robots' content='noindex,nofollow,noarchive'>",
+      "description" : "検索ロボットに対する検索拒否 index＝表示している語句 follow＝リンク先の情報 archive＝グーグル検索アーカイブにデータを保存"
+    },
+    "toggle_switch_03" : {
+      "meta" : "<meta http-equiv='X-UA-Compatible' content='IE=edge'>",
+      "description" : "ユーザーエージェントの指定"
+    },
+    "toggle_switch_04" : {
+      "meta" : "<meta http-equiv='cleartype' content='on'>",
+      "description" : "クリアタイプ　フォントの縁の描画修正"
+    },
+    "toggle_switch_05" : {
+      "meta" : "<meta name='format-detection' content='telephone=no,address=no,email=no'>",
+      "description" : "電話番号やメールアドレスをリンクにさせる"
+    },
+    "toggle_switch_06" : {
+      "meta" : "<meta name='viewport' content='width=device-width'>",
+      "description" : "ビューポートの指定 レスポンシブサイトを制作する場合はこれを書く"
+    },
+    "toggle_switch_07" : {
+      "meta" : "<meta name='coverage' content='worldwide,asia,japan'>",
+      "description" : "提供範囲の指定"
+    },
+    "toggle_switch_08" : {
+      "meta" : "<meta name='date' content='2015-01-01T00:00:00+09:00'>",
+      "description" : "作成・更新日時の指定"
+    },
+    "toggle_switch_09" : {
+      "meta" : "<meta name='author' content='著作権情報'>",
+      "description" : "著作権情報の指定"
+    },
+    "toggle_switch_10" : {
+      "meta" : "<meta name='rating' content='general'>",
+      "description" : "対象年齢の指定  “general”で一般向け"
+    },
+    "toggle_switch_11" : {
+      "meta" : "<meta name='classification' content='general'>",
+      "description" : "ジャンルの指定"
+    },
+    "toggle_switch_12" : {
+      "meta" : "<meta name='description' content='説明文'>",
+      "description" : "ページの詳細を記述 以前では検索画面のページタイトルの下に表示された 最大64文字くらい"
+    },
+    "toggle_switch_13" : {
+      "meta" : "<meta name='keywords' content='SEO,初心者,SEO女子,勉強'>",
+      "description" : "キーワードの設定"
+    },
+    "toggle_switch_14" : {
+      "meta" : "<meta name='copyright' content='©️　著作者'>",
+      "description" : "著作者設定"
+    }
+  }
+]
