@@ -1,7 +1,7 @@
 var HEAD_GENERATOR = {
   load : function(){
     $.ajax({
-        url : "/assets/json/meta.json",
+        url : "/docs/assets/json/meta.json",
         type : 'GET',
         dataType : 'json',
         cache : false,
