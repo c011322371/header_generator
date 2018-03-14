@@ -2,59 +2,48 @@
   {
     "toggle_switch_1" : {
       "meta" : "<meta charset='UTF-8'>",
-      "description" : "文字コードの指定"
+      "description" : "文字コードの指定",
+      "details" : "[必須]文字コードを指定するためものです。日本語のサイトであれば、必ず書く必要があります。<head>タグのすぐ下に書くようにしましょう。"
     },
     "toggle_switch_2" : {
-      "meta" : "<meta name='robots' content='noindex,nofollow,noarchive'>",
-      "description" : "検索ロボットに対する検索拒否 index＝表示している語句 follow＝リンク先の情報 archive＝グーグル検索アーカイブにデータを保存"
+      "meta" : "<meta name='robots' content='noindex,nofollow'>",
+      "description" : "検索ロボットに対する検索拒否",
+      "details" : "検索エンジンに対して「このページをインデックス（掲載）しないで！」という指示をするためのタグです。低品質なページや、ユーザーにとって価値のないページに対して指定しておくのがおすすめです。"
     },
     "toggle_switch_3" : {
       "meta" : "<meta http-equiv='X-UA-Compatible' content='IE=edge'>",
-      "description" : "ユーザーエージェントの指定"
+      "description" : "ユーザーエージェントの指定",
+      "details" : "[必須]IEのために書いておくのがベターです。IEには過去のバージョンで表示させる「互換モード」という機能があります。これが厄介で、訪問者が互換モードをよく分からないまま使っていた場合に、ページのデザインが崩れてしまう可能性があります。このメタタグを使うことで、常に標準モードで表示させることができます。"
     },
     "toggle_switch_4" : {
-      "meta" : "<meta http-equiv='cleartype' content='on'>",
-      "description" : "クリアタイプ　フォントの縁の描画修正"
+      "meta" : "<meta name='format-detection' content='telephone=no,address=no,email=no'>",
+      "description" : "電話番号やメールアドレスをリンクにさせる",
+      "details" : "ブラウザによっては、ページ内の電話番号やメールアドレス、住所を自動でリンクに変換してくれます。勝手にリンクにして欲しくないという場合には、こちらのメタタグを書いておくと良いでしょう。"
     },
     "toggle_switch_5" : {
-      "meta" : "<meta name='format-detection' content='telephone=no,address=no,email=no'>",
-      "description" : "電話番号やメールアドレスをリンクにさせる"
+      "meta" : "<meta name='viewport' content='width=device-width,initial-scale=1'>",
+      "description" : "ビューポートの指定",
+      "details" : "[必須]レスポンシブデザイン（スマホやタブレットでも表示を最適化）を実現するために書いておく必要があります。"
     },
     "toggle_switch_6" : {
-      "meta" : "<meta name='viewport' content='width=device-width'>",
-      "description" : "ビューポートの指定 レスポンシブサイトを制作する場合はこれを書く"
+      "meta" : "<meta name='author' content='著作権情報'>",
+      "description" : "著作権情報の指定",
+      "details" : "信頼性の面で有効そうに見えますが、SEO的な効果は期待できません。"
     },
     "toggle_switch_7" : {
-      "meta" : "<meta name='coverage' content='worldwide,asia,japan'>",
-      "description" : "提供範囲の指定"
+      "meta" : "<meta name='description' content='説明文'>",
+      "description" : "ページの詳細を記述",
+      "details" : "検索エンジンに対して「この記事の内容を簡単にまとめると、こんな感じだよ」と伝えるメタタグです。"
     },
     "toggle_switch_8" : {
-      "meta" : "<meta name='date' content='2015-01-01T00:00:00+09:00'>",
-      "description" : "作成・更新日時の指定"
+      "meta" : "<meta name='keywords' content='SEO,初心者,SEO女子,勉強'>",
+      "description" : "キーワードの設定",
+      "details" : "[不要]そのページの内容を表すキーワードを半角カンマ（,）区切りで書きます。ただし、Googleは検索順位を決めるうえでメタキーワードを一切見ていません。Googleがサポートしているメタタグ（公式ページ）にも、掲載されていません。そのうえ、キーワードを書き並べすぎると検索エンジンによってはスパム判定されてしまうこともあるようなので、基本的に書かないことをおすすめします。"
     },
     "toggle_switch_9" : {
-      "meta" : "<meta name='author' content='著作権情報'>",
-      "description" : "著作権情報の指定"
-    },
-    "toggle_switch_10" : {
-      "meta" : "<meta name='rating' content='general'>",
-      "description" : "対象年齢の指定  “general”で一般向け"
-    },
-    "toggle_switch_11" : {
-      "meta" : "<meta name='classification' content='general'>",
-      "description" : "ジャンルの指定"
-    },
-    "toggle_switch_12" : {
-      "meta" : "<meta name='description' content='説明文'>",
-      "description" : "ページの詳細を記述 以前では検索画面のページタイトルの下に表示された 最大64文字くらい"
-    },
-    "toggle_switch_13" : {
-      "meta" : "<meta name='keywords' content='SEO,初心者,SEO女子,勉強'>",
-      "description" : "キーワードの設定"
-    },
-    "toggle_switch_14" : {
       "meta" : "<meta name='copyright' content='©️　著作者'>",
-      "description" : "著作者設定"
+      "description" : "著作者設定",
+      "details" : "[不要]コピーライトは、フッターなど訪問者に見えるところに書いておきましょう。"
     }
   }
 ]

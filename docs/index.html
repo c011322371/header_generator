@@ -6,11 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="google" value="notranslate">
   <title>head_generator</title>
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <style>
     input:focus,
     button:focus,
     textarea:focus {
       outline: 0;
+    }
+    textarea {
+      resize: none;
     }
     p {
       margin: 0;
@@ -20,12 +24,17 @@
       padding: 0;
       list-style: none;
     }
+    h1 {
+      margin: 0;
+    }
   </style>
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
   <header>
-    <button type="button" class="generate-btn jsc-generate-btn">generate</button>
+    <h1>meta-tag select by customized</h1>
+    <div class="generate-btn jsc-generate-btn"><i class="fas fa-pen-square"></i></div>
+    <div class="cleaner jsc-cleaner"><i class="fas fa-trash-alt"></i></div>
   </header>
   <div class="main-contents">
     <div class="submenu">
@@ -33,6 +42,7 @@
         <li>
           <div class="meta-head">
             <p class="jsc-meta-description"></p>
+            <div class="meta-details jsc-meta-details"><i class="fas fa-question-circle"></i></div>
             <div class="toggle_switch_component">
               <input type="checkbox" id="toggle_switch_1" class="toggle_switch jsc-toggle_switch" checked="checked">
               <label for="toggle_switch_1" class="jsc-toggle_label"></label>
@@ -43,7 +53,8 @@
       </ul>
     </div>
     <div class="preview-wrapper">
-        <textarea class="preview jsc-preview" cols="30" rows="10"></textarea>
+        <textarea class="details-preview jsc-details-preview" cols="30" rows="10"></textarea>
+        <textarea class="meta-preview jsc-preview" cols="30" rows="10"></textarea>
     </div>
   </div>
   <script src="./assets/js/jquery-1.9.1.min.js"></script>

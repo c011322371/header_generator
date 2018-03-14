@@ -1,3 +1,5 @@
+// TODO 必須・不要をjsonで管理する
+
 var HEAD_GENERATOR = {
   load : function(){
     $.ajax({
@@ -22,22 +24,26 @@ var HEAD_GENERATOR = {
     CLONE_META_LIST.init(jsonSize);
   },
   setParameters: function() {
-    this.$preview = $('.jsc-preview');
-    this.$toggle = $('.jsc-toggle_switch');
+    this.$preview       = $('.jsc-preview');
+    this.$toggle        = $('.jsc-toggle_switch');
     this.$metaEditField = $('.jsc-edit_meta_field');
-    this.$generateBtn = $('.jsc-generate-btn');
+    this.$generateBtn   = $('.jsc-generate-btn');
+    this.$cleaner       = $('.jsc-cleaner');
+    this.$detailsBtn    = $('.jsc-meta-details');
   },
   bindEvent: function() {
     // set meta data
     this.$toggle.each($.proxy(function(index,target){
-      this.firstTimeFlag = true;
-      this.applyEditField($(target));
-      this.firstTimeFlag = false;
+      var $target = $(target);
+      this.setMetaTarget($target);
+      this.setMetaDescription();
+      this.applyEditField($target);
     },this));
 
     // toggle時の処理
     this.$toggle.on('change', $.proxy(function(e) {
       var $target = $(e.target);
+      this.setMetaTarget($target);
       this.applyEditField($target);
     },this));
 
@@ -45,23 +51,37 @@ var HEAD_GENERATOR = {
     this.$generateBtn.on('click', $.proxy(function() {
       this.applyPreview();
     },this));
+
+    // preview cleaner
+    this.$cleaner.on('click', $.proxy(function() {
+      this.CleanPreview();
+    },this));
+
+    // show details
+    this.$detailsBtn.on('click', $.proxy(function(e) {
+      var $target = $(e.target);
+      this.setMetaTarget($target);
+      $('.jsc-details-preview').val(this.jsonData[this.metaID].details);
+    },this));
+  },
+  setMetaTarget: function($target) {
+    // 初期読み込みとtoggleの切り替えの際に発火するメソッド
+    this.$metaList = $target.closest('li');
+    this.$target_metaEditField = this.$metaList.find('.jsc-edit_meta_field');
+    this.$target_metaDescription = this.$metaList.find('.jsc-meta-description');
+    this.metaID = this.$metaList.find('.jsc-toggle_switch').attr('id');
+    this.meta = this.jsonData[this.metaID].meta.replace(/'/g, '"'); // ' -> " 変換
+  },
+  setMetaDescription: function() {
+    // metaタグの説明をjsondataから読み込みテキストに代入する
+    this.$target_metaDescription.text(this.jsonData[this.metaID].description);
   },
   applyEditField: function($target) {
-    // 初期読み込みとtoggleの切り替えの際に発火するメソッド
-    var $metaList = $target.closest('li'),
-        $metaEditField = $metaList.find('.jsc-edit_meta_field'),
-        $metaDescription = $metaList.find('.jsc-meta-description'),
-        metaID = $target.attr('id'),
-        meta = this.jsonData[metaID].meta.replace(/'/g, '"'); // ' -> " 変換
-
-    if(this.firstTimeFlag) {
-      $metaDescription.text(this.jsonData[metaID].description);
-    }
-
     if($target.is(":checked")) {
-      $metaEditField.val(meta);
+      this.$target_metaEditField.prop('disabled',false);
+      this.$target_metaEditField.val(this.meta);
     } else {
-      $metaEditField.val('');
+      this.$target_metaEditField.prop('disabled',true);
     }
   },
   applyPreview: function() {
@@ -69,13 +89,16 @@ var HEAD_GENERATOR = {
     var metaInfo = [];
     this.$metaEditField.each(function() {
       // 空文字の場合は配列に入れない
-      if($(this).val().length==0) {
+      if($(this).val().length==0 || $(this).is(':disabled')) {
         return;
       } else {
         metaInfo.push($(this).val());
       }
     });
     this.$preview.val(metaInfo.join('\n'));
+  },
+  CleanPreview: function() {
+    this.$preview.val('');
   }
 };
 
