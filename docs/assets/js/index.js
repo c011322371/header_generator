@@ -1,5 +1,3 @@
-// TODO 必須・不要をjsonで管理する
-
 var HEAD_GENERATOR = {
   load : function(){
     $.ajax({
@@ -30,21 +28,22 @@ var HEAD_GENERATOR = {
     this.$generateBtn   = $('.jsc-generate-btn');
     this.$cleaner       = $('.jsc-cleaner');
     this.$detailsBtn    = $('.jsc-meta-details');
+    this.$detailsPreview = $('.jsc-details-preview');
   },
   bindEvent: function() {
     // set meta data
     this.$toggle.each($.proxy(function(index,target){
       var $target = $(target);
       this.setMetaTarget($target);
-      this.setMetaDescription();
-      this.applyEditField($target);
+      this.setMetaProperty();
+      this.checkToggleState($target);
     },this));
 
     // toggle時の処理
     this.$toggle.on('change', $.proxy(function(e) {
       var $target = $(e.target);
       this.setMetaTarget($target);
-      this.applyEditField($target);
+      this.checkToggleState($target);
     },this));
 
     // previewへの反映処理
@@ -61,25 +60,27 @@ var HEAD_GENERATOR = {
     this.$detailsBtn.on('click', $.proxy(function(e) {
       var $target = $(e.target);
       this.setMetaTarget($target);
-      $('.jsc-details-preview').val(this.jsonData[this.metaID].details);
+      this.$detailsPreview.val(this.jsonData[this.metaID].details);
     },this));
   },
   setMetaTarget: function($target) {
-    // 初期読み込みとtoggleの切り替えの際に発火するメソッド
     this.$metaList = $target.closest('li');
     this.$target_metaEditField = this.$metaList.find('.jsc-edit_meta_field');
     this.$target_metaDescription = this.$metaList.find('.jsc-meta-description');
     this.metaID = this.$metaList.find('.jsc-toggle_switch').attr('id');
     this.meta = this.jsonData[this.metaID].meta.replace(/'/g, '"'); // ' -> " 変換
   },
-  setMetaDescription: function() {
-    // metaタグの説明をjsondataから読み込みテキストに代入する
+  setMetaProperty: function() {
     this.$target_metaDescription.text(this.jsonData[this.metaID].description);
+    this.$target_metaEditField.val(this.meta);
+    // 必須項目であればチェック状態にする　
+    if(this.jsonData[this.metaID].required) {
+      this.$metaList.find('.jsc-toggle_switch').prop('checked', true);
+    }
   },
-  applyEditField: function($target) {
+  checkToggleState: function($target) {
     if($target.is(":checked")) {
       this.$target_metaEditField.prop('disabled',false);
-      this.$target_metaEditField.val(this.meta);
     } else {
       this.$target_metaEditField.prop('disabled',true);
     }

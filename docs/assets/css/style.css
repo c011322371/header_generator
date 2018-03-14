@@ -129,10 +129,10 @@ header h1 {
   left: 0;
 }
 .toggle_switch_component .toggle_switch:checked ~ label {
-  background-color: #B2C8F5;
+  background-color: #BEBEBE;
 }
 .toggle_switch_component .toggle_switch:checked ~ label::after {
-  background-color: #1C57CB;
+  background-color: #4E4E4E;
   transform: translatex(20px);
 }
 .toggle_switch_component label {
