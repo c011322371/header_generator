@@ -4,7 +4,7 @@
       "meta" : "<meta charset='UTF-8'>",
       "required" : true,
       "description" : "文字コードの指定",
-      "details" : "[必須]文字コードを指定するためものです。日本語のサイトであれば、必ず書く必要があります。<head>タグのすぐ下に書くようにしましょう。"
+      "details" : "[必須] 文字コードを指定するためものです。日本語のサイトであれば、必ず書く必要があります。<head>タグのすぐ下に書くようにしましょう。"
     },
     "toggle_switch_2" : {
       "meta" : "<meta name='robots' content='noindex,nofollow'>",
@@ -16,7 +16,7 @@
       "meta" : "<meta http-equiv='X-UA-Compatible' content='IE=edge'>",
       "required" : true,
       "description" : "ユーザーエージェントの指定",
-      "details" : "[必須]IEのために書いておくのがベターです。IEには過去のバージョンで表示させる「互換モード」という機能があります。これが厄介で、訪問者が互換モードをよく分からないまま使っていた場合に、ページのデザインが崩れてしまう可能性があります。このメタタグを使うことで、常に標準モードで表示させることができます。"
+      "details" : "[必須] IEのために書いておくのがベターです。IEには過去のバージョンで表示させる「互換モード」という機能があります。これが厄介で、訪問者が互換モードをよく分からないまま使っていた場合に、ページのデザインが崩れてしまう可能性があります。このメタタグを使うことで、常に標準モードで表示させることができます。"
     },
     "toggle_switch_4" : {
       "meta" : "<meta name='format-detection' content='telephone=no,address=no,email=no'>",
@@ -28,7 +28,7 @@
       "meta" : "<meta name='viewport' content='width=device-width,initial-scale=1'>",
       "required" : true,
       "description" : "ビューポートの指定",
-      "details" : "[必須]レスポンシブデザイン（スマホやタブレットでも表示を最適化）を実現するために書いておく必要があります。"
+      "details" : "[必須] レスポンシブデザイン（スマホやタブレットでも表示を最適化）を実現するために書いておく必要があります。"
     },
     "toggle_switch_6" : {
       "meta" : "<meta name='author' content='著作権情報'>",
@@ -40,19 +40,19 @@
       "meta" : "<meta name='description' content='説明文'>",
       "required" : true,
       "description" : "ページの詳細を記述",
-      "details" : "検索エンジンに対して「この記事の内容を簡単にまとめると、こんな感じだよ」と伝えるメタタグです。"
+      "details" : "検索エンジンに対して「この記事の内容を簡単にまとめると、こんな感じだよ」と伝えるメタタグです。検索結果に表示されるメタディスクリプションの最大の文字数が120文字程度であることから、その文字数以内で簡潔に記入しましょう。検索されたキーワードで一致する文字があると太字で表示されます。そのため、検索されそうなキーワードを入れておくと尚良いです。"
     },
     "toggle_switch_8" : {
       "meta" : "<meta name='keywords' content='SEO,初心者,SEO女子,勉強'>",
       "required" : false,
       "description" : "キーワードの設定",
-      "details" : "[不要]そのページの内容を表すキーワードを半角カンマ（,）区切りで書きます。ただし、Googleは検索順位を決めるうえでメタキーワードを一切見ていません。Googleがサポートしているメタタグ（公式ページ）にも、掲載されていません。そのうえ、キーワードを書き並べすぎると検索エンジンによってはスパム判定されてしまうこともあるようなので、基本的に書かないことをおすすめします。"
+      "details" : "[不要] そのページの内容を表すキーワードを半角カンマ（,）区切りで書きます。ただし、Googleは検索順位を決めるうえでメタキーワードを一切見ていません。Googleがサポートしているメタタグ（公式ページ）にも、掲載されていません。そのうえ、キーワードを書き並べすぎると検索エンジンによってはスパム判定されてしまうこともあるようなので、基本的に書かないことをおすすめします。"
     },
     "toggle_switch_9" : {
       "meta" : "<meta name='copyright' content='©️　著作者'>",
       "required" : false,
       "description" : "著作者設定",
-      "details" : "[不要]コピーライトは、フッターなど訪問者に見えるところに書いておきましょう。"
+      "details" : "[不要] コピーライトは、フッターなど訪問者に見えるところに書いておきましょう。"
     },
     "toggle_switch_10" : {
       "meta" : "<meta name='msapplication-TileImage' content='画像のURL' />",
@@ -65,6 +65,12 @@
       "required" : false,
       "description" : "Windows向けのアイコン",
       "details" : "Windows8〜登場した「ピン留め機能」のためのメタタグです。ピン留めされたときの、タイルの画像や色を指定できるというものですね。WordPressでは画像（msapplication-TileImage）の方は、サイト基本情報でアイコンを登録しておけば、自動出力されるようになっています。"
+    },
+    "toggle_switch_12" : {
+      "meta" : "<link rel='canonical' href='http://www.example.jp/'>",
+      "required" : true,
+      "description" : "canonicalタグ",
+      "details" : "http「s」の有無,　wwwの有無,　PCサイト・スマホサイトでURLが異なる等はgoogleは異なるページとして判断します。この状態ではSEOの観点から被リンクが分散するというリスクがあります。canonicalタグを使用することで、評価が分散することを防ぐことができます。"
     }
   }
 ]
